@@ -1,0 +1,33 @@
+---
+name: cqkm_cm.extended
+version: "1.0"
+sort: by_weight
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  exclude_patterns:
+    - '^[iuv].*$|[ao]$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaAbBaCa"
+    - length_in_range: [4, 300]
+      formula: "AaBaCaZa"
+import_tables:
+  - cqkm_cm        #主码表
+#  - ipinyin     #反查副码表
+#  - A           #示例A副码表
+#注:申明副码表后却无文件会卡死
+...
+春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少	demo
+春眠不觉晓，处处闻啼鸟。\n夜来风雨声，花落知多少。\n《春晓》（孟浩然）	demo
+移舟泊烟渚，日暮客愁新。\r野旷天低树，江清月近人。\r《宿建德江》（孟浩然）	demo
+日期	date
+北京市海淀区清华大学医学科学楼	addr
+tsps_e@tsinghua.edu.cn	mail
+13552888888	tel
+这是一行无编码加词示例，根据所使用的方案规则打编码，即zsyc可打出
